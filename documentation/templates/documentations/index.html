@@ -1,0 +1,9 @@
+{% if latest_documentation_list %}
+    <ul>
+    {% for documentation in latest_documentation_list %}
+        <li>{{ documentation.code }} <a href="{% url 'documentations:detail' documentation.code %}">{{ documentation.description }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Documentations are available.</p>
+{% endif %}
